@@ -12,11 +12,14 @@ const { cryptoWaitReady } = require('@polkadot/util-crypto');
 const test_ss58Format = async () => {
     // known mnemonic, well, now it is - don't use it for funds
     const astarTestMnemonic = 'accident beauty skill silk sphere gap dutch thank lottery relief vacant ethics';
+    // const jisbMnemonic = 'session turtle loyal salt horn slogan monkey pizza exist catch multiply draft';
+    
     await cryptoWaitReady();
 
     // type: ed25519, ssFormat: 42 (all defaults)
     const keyring = new Keyring();
     const pair = keyring.createFromUri(astarTestMnemonic);
+    // const pair = keyring.createFromUri(jisbMnemonic);
 
     // use the default as setup on init
     // 5Easi2Bt4Cr1cEWrC79FUZZ66iaoCw3kDqA6eDSkgZFpQr8R
@@ -39,8 +42,10 @@ const test_ss58Format = async () => {
 
     const shibuKeyring = new Keyring({ type: 'sr25519', ss58Format: 5 });
     const pairShibuya = shibuKeyring.createFromUri(astarTestMnemonic, { name: 'sr25519' });
+    // const pairShibuya = shibuKeyring.createFromUri(jisbMnemonic, { name: 'sr25519' });
     console.log('Shibuya', pairShibuya.address);
-    // b6pXwXh81QxhFKALjtQerXej78jVGpwzjQSpPiXF6JagqS2
+    // b6pXwXh81QxhFKALjtQerXej78jVGpwzjQSpPiXF6JagqS2 | astarTestMnemonic
+    // VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U | jisbMnemonic
 }
 
 /**
@@ -71,7 +76,7 @@ const decodeAddr = async () => {
 }
 
 
-// test_ss58Format();
+test_ss58Format();
 
 
-decodeAddr();
+// decodeAddr();

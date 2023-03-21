@@ -4,9 +4,9 @@
  * - To create your first keyring,
  *      it is as simple as importing it and constructing it.
  */
-const { Keyring } = require('@polkadot/keyring');
+// const { Keyring } = require('@polkadot/keyring');
 // create a keyring with some non-default values specified
-const keyring = new Keyring({ type: 'sr25519', ss58Format: 2 });
+// const keyring = new Keyring({ type: 'sr25519', ss58Format: 2 });
 /**
  * - As detailed earlier, in stardard Polkadot/Substrate chains
  *      ed25519/sr25519/ecdsa types are supported.
