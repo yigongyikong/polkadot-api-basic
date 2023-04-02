@@ -1,0 +1,294 @@
+[
+  {
+    "phase": {
+      "initialization": null
+    },
+    "event": {
+      "index": "0x1f02",
+      "data": [
+        "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+        "XZnocgu3rfRKfMmJV593SQgp4UTgkVSbHtET3U2kwZbYufw",
+        "0x000000000000000001e00373b0ad86bb"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "initialization": null
+    },
+    "event": {
+      "index": "0x5308",
+      "data": [
+        "0x000000000003a8a0656f234b96a48877",
+        "0x000000000003a8a078eb82988ff91f66"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 0
+    },
+    "event": {
+      "index": "0x1f07",
+      "data": [
+        "YQnbw3oWxBnCUarnbePrjFcrSgVPP2jqTZYzWcccmN8fXhd",
+        "0x0000000000000000137c5f4d88317f7a"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 0
+    },
+    "event": {
+      "index": "0x1f07",
+      "data": [
+        "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+        "0x000000000000000001d91265c7f72500"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 0
+    },
+    "event": {
+      "index": "0x1f07",
+      "data": [
+        "YQnbw3oWxBk2zTouRxQyxnD2dDCFsGrRGQRaCeDLy7KKMdJ",
+        "0x00000000000000000dc6ebe521945b86"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 0
+    },
+    "event": {
+      "index": "0x0a00",
+      "data": [
+        {
+          "weight": {
+            "refTime": 260558000,
+            "proofSize": 0
+          },
+          "class": "Mandatory",
+          "paysFee": "Yes"
+        }
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 1
+    },
+    "event": {
+      "index": "0x0a00",
+      "data": [
+        {
+          "weight": {
+            "refTime": 98974000,
+            "proofSize": 0
+          },
+          "class": "Mandatory",
+          "paysFee": "No"
+        }
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 2
+    },
+    "event": {
+      "index": "0x1f08",
+      "data": [
+        "b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V",
+        1590076312218309
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 2
+    },
+    "event": {
+      "index": "0x1f02",
+      "data": [
+        "b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V",
+        "VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U",
+        "0x000000000000000002c68af0bb140000"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 2
+    },
+    "event": {
+      "index": "0x1f07",
+      "data": [
+        "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+        1272061049774648
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 2
+    },
+    "event": {
+      "index": "0x1e00",
+      "data": [
+        "b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V",
+        1590076312218309,
+        0
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 2
+    },
+    "event": {
+      "index": "0x0a00",
+      "data": [
+        {
+          "weight": {
+            "refTime": 272785000,
+            "proofSize": 0
+          },
+          "class": "Normal",
+          "paysFee": "Yes"
+        }
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x1f08",
+      "data": [
+        "XmVR4FbKWLYQgyHVxkFiBYScVo662WgSCoS84uZZPWNrtRT",
+        "0x0000000000000000001675dce45c87fc"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x4606",
+      "data": [
+        "XmVR4FbKWLYQgyHVxkFiBYScVo662WgSCoS84uZZPWNrtRT",
+        "Zxvcq5nxX3zx1rBc2JJ81nx9Q5XWaYAwA1pH95wfYsbJgWz"
+      ]
+    },
+    "topics": [
+      "0xdae0267e20443e9ebcabff688f5b938ec1166cfd3444c38bd964e3700b33513c",
+      "0x2cd16927866c214a3e38c134cbfaed915b7c3ea266fa5f0eaf32a2b413abc4dc"
+    ]
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x1f02",
+      "data": [
+        "XmVR4FbKWLYQgyHVxkFiBYScVo662WgSCoS84uZZPWNrtRT",
+        "Zxvcq5nxX3zx1rBc2JJ81nx9Q5XWaYAwA1pH95wfYsbJgWz",
+        455000000000
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x1f04",
+      "data": [
+        "Zxvcq5nxX3zx1rBc2JJ81nx9Q5XWaYAwA1pH95wfYsbJgWz",
+        455000000000
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x1f07",
+      "data": [
+        "XmVR4FbKWLYQgyHVxkFiBYScVo662WgSCoS84uZZPWNrtRT",
+        1147388863754
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x1f07",
+      "data": [
+        "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+        "0x00000000000000000011f70e321fe8c2"
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x1e00",
+      "data": [
+        "XmVR4FbKWLYQgyHVxkFiBYScVo662WgSCoS84uZZPWNrtRT",
+        "0x0000000000000000001674d1bea7e2f2",
+        0
+      ]
+    },
+    "topics": []
+  },
+  {
+    "phase": {
+      "applyExtrinsic": 3
+    },
+    "event": {
+      "index": "0x0a00",
+      "data": [
+        {
+          "weight": {
+            "refTime": 2134453909,
+            "proofSize": 127165
+          },
+          "class": "Normal",
+          "paysFee": "Yes"
+        }
+      ]
+    },
+    "topics": []
+  }
+]

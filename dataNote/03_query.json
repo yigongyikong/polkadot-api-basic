@@ -1,0 +1,477 @@
+query: {
+  substrate: {
+    changesTrieConfig: [Getter
+    ],
+    childStorageKeyPrefix: [Getter
+    ],
+    code: [Getter
+    ],
+    extrinsicIndex: [Getter
+    ],
+    heapPages: [Getter
+    ]
+  },
+  system: {
+    palletVersion: [Getter
+    ],
+    account: [Getter
+    ],
+    extrinsicCount: [Getter
+    ],
+    blockWeight: [Getter
+    ],
+    allExtrinsicsLen: [Getter
+    ],
+    blockHash: [Getter
+    ],
+    extrinsicData: [Getter
+    ],
+    number: [Getter
+    ],
+    parentHash: [Getter
+    ],
+    digest: [Getter
+    ],
+    events: [Getter
+    ],
+    eventCount: [Getter
+    ],
+    eventTopics: [Getter
+    ],
+    lastRuntimeUpgrade: [Getter
+    ],
+    upgradedToU32RefCount: [Getter
+    ],
+    upgradedToTripleRefCount: [Getter
+    ],
+    executionPhase: [Getter
+    ]
+  },
+  identity: {
+    palletVersion: [Getter
+    ],
+    identityOf: [Getter
+    ],
+    superOf: [Getter
+    ],
+    subsOf: [Getter
+    ],
+    registrars: [Getter
+    ]
+  },
+  timestamp: { palletVersion: [Getter
+    ], now: [Getter
+    ], didUpdate: [Getter
+    ]
+  },
+  multisig: { palletVersion: [Getter
+    ], multisigs: [Getter
+    ]
+  },
+  randomnessCollectiveFlip: { palletVersion: [Getter
+    ], randomMaterial: [Getter
+    ]
+  },
+  scheduler: {
+    palletVersion: [Getter
+    ],
+    incompleteSince: [Getter
+    ],
+    agenda: [Getter
+    ],
+    lookup: [Getter
+    ]
+  },
+  proxy: {
+    palletVersion: [Getter
+    ],
+    proxies: [Getter
+    ],
+    announcements: [Getter
+    ]
+  },
+  parachainSystem: {
+    palletVersion: [Getter
+    ],
+    pendingValidationCode: [Getter
+    ],
+    newValidationCode: [Getter
+    ],
+    validationData: [Getter
+    ],
+    didSetValidationCode: [Getter
+    ],
+    lastRelayChainBlockNumber: [Getter
+    ],
+    upgradeRestrictionSignal: [Getter
+    ],
+    relayStateProof: [Getter
+    ],
+    relevantMessagingState: [Getter
+    ],
+    hostConfiguration: [Getter
+    ],
+    lastDmqMqcHead: [Getter
+    ],
+    lastHrmpMqcHeads: [Getter
+    ],
+    processedDownwardMessages: [Getter
+    ],
+    hrmpWatermark: [Getter
+    ],
+    hrmpOutboundMessages: [Getter
+    ],
+    upwardMessages: [Getter
+    ],
+    pendingUpwardMessages: [Getter
+    ],
+    announcedHrmpMessagesPerCandidate: [Getter
+    ],
+    reservedXcmpWeightOverride: [Getter
+    ],
+    reservedDmpWeightOverride: [Getter
+    ],
+    authorizedUpgrade: [Getter
+    ],
+    customValidationHeadData: [Getter
+    ]
+  },
+  parachainInfo: { palletVersion: [Getter
+    ], parachainId: [Getter
+    ]
+  },
+  transactionPayment: {
+    palletVersion: [Getter
+    ],
+    nextFeeMultiplier: [Getter
+    ],
+    storageVersion: [Getter
+    ]
+  },
+  balances: {
+    palletVersion: [Getter
+    ],
+    totalIssuance: [Getter
+    ],
+    inactiveIssuance: [Getter
+    ],
+    account: [Getter
+    ],
+    locks: [Getter
+    ],
+    reserves: [Getter
+    ]
+  },
+  vesting: {
+    palletVersion: [Getter
+    ],
+    vesting: [Getter
+    ],
+    storageVersion: [Getter
+    ]
+  },
+  dappsStaking: {
+    palletVersion: [Getter
+    ],
+    palletDisabled: [Getter
+    ],
+    ledger: [Getter
+    ],
+    currentEra: [Getter
+    ],
+    blockRewardAccumulator: [Getter
+    ],
+    forceEra: [Getter
+    ],
+    nextEraStartingBlock: [Getter
+    ],
+    registeredDevelopers: [Getter
+    ],
+    registeredDapps: [Getter
+    ],
+    generalEraInfo: [Getter
+    ],
+    contractEraStake: [Getter
+    ],
+    generalStakerInfo: [Getter
+    ],
+    storageVersion: [Getter
+    ]
+  },
+  blockReward: {
+    palletVersion: [Getter
+    ],
+    rewardDistributionConfigStorage: [Getter
+    ]
+  },
+  assets: {
+    palletVersion: [Getter
+    ],
+    asset: [Getter
+    ],
+    account: [Getter
+    ],
+    approvals: [Getter
+    ],
+    metadata: [Getter
+    ]
+  },
+  authorship: {
+    palletVersion: [Getter
+    ],
+    uncles: [Getter
+    ],
+    author: [Getter
+    ],
+    didSetUncles: [Getter
+    ]
+  },
+  collatorSelection: {
+    palletVersion: [Getter
+    ],
+    invulnerables: [Getter
+    ],
+    candidates: [Getter
+    ],
+    lastAuthoredBlock: [Getter
+    ],
+    desiredCandidates: [Getter
+    ],
+    candidacyBond: [Getter
+    ],
+    slashDestination: [Getter
+    ]
+  },
+  session: {
+    palletVersion: [Getter
+    ],
+    validators: [Getter
+    ],
+    currentIndex: [Getter
+    ],
+    queuedChanged: [Getter
+    ],
+    queuedKeys: [Getter
+    ],
+    disabledValidators: [Getter
+    ],
+    nextKeys: [Getter
+    ],
+    keyOwner: [Getter
+    ]
+  },
+  aura: {
+    palletVersion: [Getter
+    ],
+    authorities: [Getter
+    ],
+    currentSlot: [Getter
+    ]
+  },
+  auraExt: { palletVersion: [Getter
+    ], authorities: [Getter
+    ]
+  },
+  xcmpQueue: {
+    palletVersion: [Getter
+    ],
+    inboundXcmpStatus: [Getter
+    ],
+    inboundXcmpMessages: [Getter
+    ],
+    outboundXcmpStatus: [Getter
+    ],
+    outboundXcmpMessages: [Getter
+    ],
+    signalMessages: [Getter
+    ],
+    queueConfig: [Getter
+    ],
+    overweight: [Getter
+    ],
+    overweightCount: [Getter
+    ],
+    queueSuspended: [Getter
+    ]
+  },
+  polkadotXcm: {
+    palletVersion: [Getter
+    ],
+    queryCounter: [Getter
+    ],
+    queries: [Getter
+    ],
+    assetTraps: [Getter
+    ],
+    safeXcmVersion: [Getter
+    ],
+    supportedVersion: [Getter
+    ],
+    versionNotifiers: [Getter
+    ],
+    versionNotifyTargets: [Getter
+    ],
+    versionDiscoveryQueue: [Getter
+    ],
+    currentMigration: [Getter
+    ]
+  },
+  dmpQueue: {
+    palletVersion: [Getter
+    ],
+    configuration: [Getter
+    ],
+    pageIndex: [Getter
+    ],
+    pages: [Getter
+    ],
+    overweight: [Getter
+    ]
+  },
+  xcAssetConfig: {
+    palletVersion: [Getter
+    ],
+    assetIdToLocation: [Getter
+    ],
+    assetLocationToId: [Getter
+    ],
+    assetLocationUnitsPerSecond: [Getter
+    ]
+  },
+  evm: {
+    palletVersion: [Getter
+    ],
+    accountCodes: [Getter
+    ],
+    accountStorages: [Getter
+    ]
+  },
+  ethereum: {
+    palletVersion: [Getter
+    ],
+    pending: [Getter
+    ],
+    currentBlock: [Getter
+    ],
+    currentReceipts: [Getter
+    ],
+    currentTransactionStatuses: [Getter
+    ],
+    blockHash: [Getter
+    ]
+  },
+  baseFee: {
+    palletVersion: [Getter
+    ],
+    baseFeePerGas: [Getter
+    ],
+    elasticity: [Getter
+    ]
+  },
+  evmChainId: { palletVersion: [Getter
+    ], chainId: [Getter
+    ]
+  },
+  contracts: {
+    palletVersion: [Getter
+    ],
+    pristineCode: [Getter
+    ],
+    codeStorage: [Getter
+    ],
+    ownerInfoOf: [Getter
+    ],
+    nonce: [Getter
+    ],
+    contractInfoOf: [Getter
+    ],
+    deletionQueue: [Getter
+    ]
+  },
+  democracy: {
+    palletVersion: [Getter
+    ],
+    publicPropCount: [Getter
+    ],
+    publicProps: [Getter
+    ],
+    depositOf: [Getter
+    ],
+    referendumCount: [Getter
+    ],
+    lowestUnbaked: [Getter
+    ],
+    referendumInfoOf: [Getter
+    ],
+    votingOf: [Getter
+    ],
+    lastTabledWasExternal: [Getter
+    ],
+    nextExternal: [Getter
+    ],
+    blacklist: [Getter
+    ],
+    cancellations: [Getter
+    ]
+  },
+  council: {
+    palletVersion: [Getter
+    ],
+    proposals: [Getter
+    ],
+    proposalOf: [Getter
+    ],
+    voting: [Getter
+    ],
+    proposalCount: [Getter
+    ],
+    members: [Getter
+    ],
+    prime: [Getter
+    ]
+  },
+  technicalCommittee: {
+    palletVersion: [Getter
+    ],
+    proposals: [Getter
+    ],
+    proposalOf: [Getter
+    ],
+    voting: [Getter
+    ],
+    proposalCount: [Getter
+    ],
+    members: [Getter
+    ],
+    prime: [Getter
+    ]
+  },
+  treasury: {
+    palletVersion: [Getter
+    ],
+    proposalCount: [Getter
+    ],
+    proposals: [Getter
+    ],
+    deactivated: [Getter
+    ],
+    approvals: [Getter
+    ]
+  },
+  preimage: {
+    palletVersion: [Getter
+    ],
+    statusFor: [Getter
+    ],
+    preimageFor: [Getter
+    ]
+  },
+  sudo: { palletVersion: [Getter
+    ], key: [Getter
+    ]
+  },
+  contractsMigration: { palletVersion: [Getter
+    ], migrationStateStorage: [Getter
+    ]
+  }
+},

@@ -3,6 +3,7 @@
     "@astar-network/astar-api": "^0.2.1",
     "@polkadot/api": "^10.1.4",
     "@polkadot/keyring": "^11.0.2",
+    "@polkadot/types": "^10.1.4",
     "dedupe": "^4.0.2"
   },
   "devDependencies": {
