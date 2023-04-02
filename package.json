@@ -1,0 +1,17 @@
+{
+  "name": "polkadot-api-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polkadot/api": "^10.2.2",
+    "@polkadot/rpc-provider": "^10.2.2",
+    "@substrate/connect": "^0.7.22",
+    "@substrate/txwrapper-polkadot": "^5.0.1"
+  }
+}
