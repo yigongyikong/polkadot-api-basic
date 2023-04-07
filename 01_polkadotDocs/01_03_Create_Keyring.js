@@ -1,12 +1,13 @@
+const { stringToU8a, u8aToHex } = require('@polkadot/util');
 /**
  * https://polkadot.js.org/docs/keyring/start/create
  * Create]
  * - To create your first keyring,
  *      it is as simple as importing it and constructing it.
  */
-// const { Keyring } = require('@polkadot/keyring');
+const { Keyring } = require('@polkadot/keyring');
 // create a keyring with some non-default values specified
-// const keyring = new Keyring({ type: 'sr25519', ss58Format: 2 });
+const keyring = new Keyring({ type: 'sr25519', ss58Format: 2 });
 /**
  * - As detailed earlier, in stardard Polkadot/Substrate chains
  *      ed25519/sr25519/ecdsa types are supported.
@@ -22,38 +23,38 @@
  * Adding a pair]
  * - From the empty keyring above, we can now add a new pair to our keyring.
  */
-/*const { mnemonicGenerate } = require('@polkadot/util-crypto');
+/*
+const { mnemonicGenerate } = require('@polkadot/util-crypto');
 
 const mnemonic = mnemonicGenerate();
 console.log(`mnemonic : ${mnemonic}`);
+// mnemonic : neutral deputy capable tired plug height luxury control unhappy drink creek pizza
 
 // create & add the pair to the keyring with the type and some additional
 // metadata specified
 const pair = keyring.addFromUri(mnemonic, { name: 'first pair' }, 'ed25519');
 
 // the pair has been added to our keyring
-console.log(keyring.pairs.length, 'pairs available');
+console.log(keyring.pairs.length, 'pairs available'); // 1 pairs available
 
 // log the name & address (the latter encoded with the ss58Format)
-console.log(pair.meta.name, 'has address', pair.address);*/
+console.log(pair.meta.name, 'has address', pair.address); // first pair has address HJh3hecPJFFEJxPSQxsYosiUxTAMdzHN5HAvR9jZ2AEU7AA
+*/
+
 /** result of upper code
  * mnemonic : someone rough seat enhance ski exchange similar sing shaft orchard salt can
  * 1 pairs available
  * first pair has address EsYdLF1ZBQpeGZjBDGAJwCykK3rwRhEERarBKJZ46Lsqpy
  */
-
 /*
-// const result = keyring.pairs(); // keyring.pairs is not a function
-// console.log(result)
-
 const myMnemonic = 'someone rough seat enhance ski exchange similar sing shaft orchard salt can';
 const result = keyring.addFromMnemonic(myMnemonic, { test: 'testing'}, 'ed25519');
 // console.log(result);
 console.log(result.address); // EsYdLF1ZBQpeGZjBDGAJwCykK3rwRhEERarBKJZ46Lsqpy5
-console.log(result.addressRaw); // ascii-value for address
+console.log(u8aToHex(result.addressRaw)); // 0x659bc4e32df2770d08067899e641f63c7ab2c6751eba67ef6d7b63be7d3b992d : ascii-value for address
 console.log(result.isLocked); // false
 console.log(result.meta); // { test: 'testing' }
-console.log(result.publicKey); // === addressRaw
+console.log(u8aToHex(result.publicKey)); // 0x659bc4e32df2770d08067899e641f63c7ab2c6751eba67ef6d7b63be7d3b992d : === addressRaw
 console.log(result.type); // ed25519
 */
 
@@ -64,20 +65,24 @@ console.log(result.type); // ed25519
  * - This means that before adding any keypair with sr25519,
  *      we first need to ensure the WASM is initialized.
  */
-const { cryptoWaitReady, mnemonicGenerate } = require('@polkadot/util-crypto');
+// const { cryptoWaitReady, mnemonicGenerate } = require('@polkadot/util-crypto');
+const { cryptoWaitReady } = require('@polkadot/util-crypto');
+
+await cryptoWaitReady();
 
 const getAddr = async () => {
     // we only need to do this once per app, somewhere in our init code
     // (when using the API and waiting on `isReady` this is done automatically)
-    await cryptoWaitReady();
-
+    
+    // await cryptoWaitReady();
     const myMnemonic = 'someone rough seat enhance ski exchange similar sing shaft orchard salt can';
     // create an ed25519 pair from the mnemonic
     const ep = keyring.createFromUri(myMnemonic, { name: 'ed25519' }, 'ed25519');
-
+    
     // create an sr25519 pair from the mnemonic (keyring defaults)
     const sp = keyring.createFromUri(myMnemonic, { name: 'sr25519' });
 
+    
     // log the addresses, different cryptos, different results
     console.log(ep.meta.name, ep.address);
         // ed25519 EsYdLF1ZBQpeGZjBDGAJwCykK3rwRhEERarBKJZ46Lsqpy5
