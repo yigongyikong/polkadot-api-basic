@@ -13,10 +13,8 @@ import {
     methods,
     OptionsWithMeta
 } from '@substrate/txwrapper-polkadot';
-import {
-    createSigningPayload,
-} from '@substrate/txwrapper-core/lib/core/construct';
 import { EXTRINSIC_VERSION } from '@polkadot/types/extrinsic/v4/Extrinsic';
+import { getDappAddressEnum } from '@astar-network/astar-sdk-core';
 
 const offlineSignWssTransfer = async () => {
     // Create a new instance of the api
@@ -40,9 +38,15 @@ const offlineSignWssTransfer = async () => {
     // testAcnt2Key's SS58-Encoded Address: 5HBSNV13JH7LuEtJUBNuKgcaPgNaXGBZhCknUWrKmD9p8vhA
 
     const block_api = await api.rpc.chain.getBlock();
-    // console.log(block_api.block.header.number.toHex());
-    const blockHash_api = await api.rpc.chain.getBlockHash();
+    // console.log(block_api.block.header.number.toHex()); // 0x00362c5d
+    // console.log('===== ===== =====');
+    // console.log(block_api.block.header.number); // Type { registry: TypeRegistry {}, initialU8aLength: 0 }
+    // console.log('===== ===== =====');
+    // console.log(block_api.block.header.number.toNumber()); // 3550301
+    // console.log('===== ===== =====');
+    const blockHash_api = await api.rpc.chain.getBlockHash(block_api.block.header.number.toHex());
     // console.log(blockHash_api.toHex());
+    // console.log('===== ===== =====');
     const genesisHash_api = await api.genesisHash;
     // console.log(genesisHash_api.toHex());
     const metadataRpc_api = await api.rpc.state.getMetadata();
@@ -63,63 +67,83 @@ const offlineSignWssTransfer = async () => {
     const accountBalInfo = await api.derive.balances.account(testAcnt2);
     const nonceTestAcnt2 = accountBalInfo.accountNonce.toString();
     // console.log(`nonceTestAcnt2: ${nonceTestAcnt2}`);
+    console.log('===== ===== =====');
 
-    const unsigned_api = methods.balances.transfer(
-        {
-            value: '2000000000000000', // 200000000000000000
-            dest: testAcnt1, // Bob
-        },
-        {
-            // address: deriveAddress(testAcnt2Key.publicKey, 42), // TODO, use correct prefix
-            address: testAcnt2, // TODO, use correct prefix
-            blockHash: blockHash_api.toHex(),
-            blockNumber: registry_api
-                .createType('BlockNumber', block_api.block.header.number.toHex())
-                .toNumber(),
-            eraPeriod: 64,
-            genesisHash: genesisHash_api.toHex(),
-            metadataRpc: metadataRpc_api.toHex(),
-            // nonce: 0, // Assuming this is Alice's first tx on the chain
-            nonce: Number(nonceTestAcnt2),
-            specVersion: runtime_api.specVersion.toNumber(),
-            tip: 0,
-            transactionVersion: runtime_api.transactionVersion.toNumber(),
-        },
-        {
-            metadataRpc: metadataRpc_api.toHex(),
-            registry: registry_api,
-        }
-    );
-    // console.log(unsigned_api);
+    // const unsigned_api = methods.balances.transfer(
+    // const unsigned = methods.balances.transfer(
+    //     {
+    //         value: '2000000000000000', // 200000000000000000
+    //         dest: testAcnt1, // Bob
+    //     },
+    //     {
+    //         // address: deriveAddress(testAcnt2Key.publicKey, 42), // TODO, use correct prefix
+    //         address: testAcnt2, // TODO, use correct prefix
+    //         blockHash: blockHash_api.toHex(),
+    //         blockNumber: registry_api
+    //             .createType('BlockNumber', block_api.block.header.number.toHex())
+    //             .toNumber(),
+    //         eraPeriod: 64,
+    //         genesisHash: genesisHash_api.toHex(),
+    //         metadataRpc: metadataRpc_api.toHex(),
+    //         // nonce: 0, // Assuming this is Alice's first tx on the chain
+    //         nonce: Number(nonceTestAcnt2),
+    //         specVersion: runtime_api.specVersion.toNumber(),
+    //         tip: 0,
+    //         transactionVersion: runtime_api.transactionVersion.toNumber(),
+    //     },
+    //     {
+    //         metadataRpc: metadataRpc_api.toHex(),
+    //         registry: registry_api,
+    //     }
+    // );
+    // console.log(unsigned);
+    // console.log('===== ===== =====');
 
-
-    // Decode an unsigned transaction.
-    const decodedUnsigned_api = decode(unsigned_api, {
-        metadataRpc: metadataRpc_api.toHex(),
-        registry: registry_api,
+    // const blockNumber_tmp = registry_api.createType('BlockNumber', block_api.block.header.number.toHex()).toNumber();
+    const blockNumber_tmp = registry_api.createType('BlockNumber', block_api.block.header.number.toHex()).toString();
+    const era_tmp = api.registry.createType('ExtrinsicEra', {
+        current: blockNumber_tmp,
+        period: 64,
     });
-    // console.log(`\decodedUnsigned_api: ${decodedUnsigned_api}`);
-    // console.log(decodedUnsigned_api);
-    console.log(
-        // TODO all the log messages need to be updated to be relevant to the method used
-        `\nDecoded Transaction\n  To: ${decodedUnsigned_api.method.args.dest}\n` +
-        `  Amount: ${decodedUnsigned_api.method.args.value}`
-    );
+    const contractAddress = '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712';
+
+    // const stakeCall = await api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(5000000000000000000));
+    // const stakeCall = await api.tx.dappsStaking.unbondAndUnstake(getDappAddressEnum(contractAddress), BigInt(3000000000000000000));
+
+    const unsigned_api = {
+        // specVersion: runtime_api.specVersion.toNumber(),
+        specVersion: runtime_api.specVersion.toString(),
+        // transactionVersion: runtime_api.transactionVersion.toNumber(),
+        transactionVersion: runtime_api.transactionVersion.toString(),
+        address: testAcnt2,
+        blockHash: blockHash_api.toHex(),
+        blockNumber: blockNumber_tmp,
+        era: era_tmp.toHex(),
+        // era: 64,
+        genesisHash: genesisHash_api.toHex(),
+        method: api.tx.balances.transfer(testAcnt1, BigInt(200000000000000000)).method.toHex(),
+        // method: api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(7000000000000000000)).method.toHex(),
+        nonce: nonceTestAcnt2,
+        signedExtensions: [
+            'CheckNonZeroSender',
+            'CheckSpecVersion',
+            'CheckTxVersion',
+            'CheckGenesis',
+            'CheckMortality',
+            'CheckNonce',
+            'CheckWeight',
+            'ChargeTransactionPayment',
+        ],
+        tip: '0x00000000000000000000000000000000',
+        version: 4,
+        metadataRpc: metadataRpc_api.toHex()
+    }
+    console.log(unsigned_api);
+    console.log('===== ===== =====');
 
     // Construct the signing payload from an unsigned transaction.
     const signingPayload_api = construct.signingPayload(unsigned_api, { registry: registry_api });
     console.log(`\nPayload to Sign: ${signingPayload_api}`);
-
-    // Decode the information from a signing payload.
-    const payloadInfo_api = decode(signingPayload_api, {
-        metadataRpc: metadataRpc_api.toHex(),
-        registry: registry_api,
-    });
-    console.log(
-        // TODO all the log messages need to be updated to be relevant to the method used
-        `\nDecoded Transaction\n  To: ${payloadInfo_api.method.args.dest}\n` +
-        `  Amount: ${payloadInfo_api.method.args.value}`
-    );
 
     // Sign a payload. This operation should be performed on an offline device.
     // const signature = signWith(alice, signingPayload, {
@@ -127,7 +151,7 @@ const offlineSignWssTransfer = async () => {
         metadataRpc: metadataRpc_api.toHex(),
         registry: registry_api,
     });
-    // console.log(`\nSignature: ${signature_api}`);
+    console.log(`\nSignature: ${signature_api}`);
 
     // Encode a signed transaction.
     const tx_api = construct.signedTx(unsigned_api, signature_api, {
@@ -136,28 +160,12 @@ const offlineSignWssTransfer = async () => {
     });
     console.log(`\nTransaction to Submit: ${tx_api}`);
 
-
-    // Calculate the tx hash of the signed transaction offline.
-    const expectedTxHash_api = construct.txHash(tx_api);
-    // console.log(`\nExpected Tx Hash: ${expectedTxHash_api}`);
-
     // Send the tx to the node. Since `txwrapper` is offline-only, this
     // operation should be handled externally. Here, we just send a JSONRPC
     // request directly to the node.
     // const actualTxHash = await rpcToLocalNode('author_submitExtrinsic', [tx]);
-    /*const actualTxHash_api = await api.rpc.author.submitExtrinsic(tx_api);
+    const actualTxHash_api = await api.rpc.author.submitExtrinsic(tx_api);
     console.log(`Actual Tx Hash: ${actualTxHash_api}`);
-
-    // Decode a signed payload.
-    const txInfo_api = decode(tx_api, {
-        metadataRpc: metadataRpc_api.toHex(),
-        registry: registry_api,
-    });
-    console.log(
-        // TODO all the log messages need to be updated to be relevant to the method used
-        `\nDecoded Transaction\n  To: ${txInfo_api.method.args.dest}\n` +
-        `  Amount: ${txInfo_api.method.args.value}\n`
-    );*/
 
 }
 

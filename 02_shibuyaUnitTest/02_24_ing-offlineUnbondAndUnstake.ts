@@ -46,7 +46,7 @@ const onlineUnbondAndUnstake = async () => {
     const signedTx = await stakeCall.signAsync(testAcnt2Key);
     console.log(signedTx); // Submittable { initialU8aLength: undefined, registry: TypeRegistry {} }
     console.log('===== ===== =====');
-    console.log(`signedTx : ${signedTx}`);
+    console.log(`${signedTx}`);
     // signedTx : {"signature":{"signer":{"id":"b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V"},"signature":{"sr25519":"0xeaa3a3c3d26cc6efcfeaf33d919c98afe4eebe1b74d7e72a89119f03e17e6e01330d3bbb1ad335c3cef00ed897f87ce2395d2682bdcf9f820af7a405e00f6c81"},"era":{"mortalEra":"0xf400"},"nonce":22,"tip":0},"method":{"callIndex":"0x2204","args":{"contract_id":{"evm":"0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712"},"value":"0x000000000000000029a2241af62c0000"}}}
     console.log('===== ===== =====');
     const txhash = await signedTx.send();

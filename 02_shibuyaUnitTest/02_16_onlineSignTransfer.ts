@@ -32,15 +32,17 @@ const onlineSignTransfer = async () => {
     console.log(signedTx);
     // Submittable { initialU8aLength: undefined, registry: TypeRegistry {} }
     console.log('===== ===== =====');
-    console.log(`signedTx : ${signedTx}`);
-    // signedTx : {"signature":{"signer":{"id":"b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V"},"signature":{"sr25519":"0x424a05493a61a47b6952b3357bcc08e2d210b566be82ec7fe506840483a9831800c3d355eb4302f676cbeb7d4252602c1d99ddda58e8c292171b72094ed2ac86"},"era":{"mortalEra":"0xe400"},"nonce":6,"tip":0},"method":{"callIndex":"0x1f00","args":{"dest":{"id":"VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"},"value":"0x000000000000000002c68af0bb140000"}}}
+    console.log(`${signedTx}`); // signedTx : {"signature":{"signer":{"id":"b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V"},"signature":{"sr25519":"0x424a05493a61a47b6952b3357bcc08e2d210b566be82ec7fe506840483a9831800c3d355eb4302f676cbeb7d4252602c1d99ddda58e8c292171b72094ed2ac86"},"era":{"mortalEra":"0xe400"},"nonce":6,"tip":0},"method":{"callIndex":"0x1f00","args":{"dest":{"id":"VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"},"value":"0x000000000000000002c68af0bb140000"}}}
+    console.log('===== ===== =====');
+    console.log(signedTx.toHex());
+    // 0x4d028400e24fc1367224c25f0eb4a12d5013386aee19b194dc23b9384b8f975ea7b0610e010e70f590b3f68abfb91f55515ee62e3a943b397fba1f63cd9748cff1d70b130b67daf97ea6599e555ee2d1402633a9ed095dd5c7897067acafa73354f590a98d84005c001f000000c499d3bbe996dfbb5549064d1890def4a9775a675b43b9203eefd810b21f6513000014bbf08ac602
     console.log('===== ===== =====');
     console.log(`${signedTx.method}`); // {"callIndex":"0x1f00","args":{"dest":{"id":"VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"},"value":"0x000000000000000002c68af0bb140000"}
     console.log('===== ===== =====');
     console.log(`${signedTx.method.toHex()}`); // 0x1f000000c499d3bbe996dfbb5549064d1890def4a9775a675b43b9203eefd810b21f6513000014bbf08ac602
     console.log('===== STEP2-SignRawTx-End =====');
 
-    // console.log('===== STEP3-SendSignedTx-Start =====');
+    console.log('===== STEP3-SendSignedTx-Start =====');
     // const txhash = await signedTx.send();
     // console.log(txhash);
     // console.log('===== ===== =====');

@@ -1,0 +1,75 @@
+===== STEP1-RawTx-Start =====
+Submittable { initialU8aLength: undefined, registry: TypeRegistry {}
+}
+===== ===== =====
+{
+    "signature": {
+        "signer": {
+            "id": "VwJHxi1vTNdnJ2KXfQ7tWL8ERiUGv9bwhmf5RDWKGySQmsy"
+        },
+        "signature": {
+            "ed25519": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "era": {
+            "immortalEra": "0x00"
+        },
+        "nonce": 0,
+        "tip": 0
+    },
+    "method": {
+        "callIndex": "0x1f00",
+        "args": {
+            "dest": {
+                "id": "VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"
+            },
+            "value": "0x000000000000000002c68af0bb140000"
+        }
+    }
+}
+===== STEP1-RawTx-End =====
+===== STEP2-SignRawTx-Start =====
+testAcnt2Key : 5HBSNV13JH7LuEtJUBNuKgcaPgNaXGBZhCknUWrKmD9p8vhA
+===== ===== =====
+Submittable { initialU8aLength: undefined, registry: TypeRegistry {}
+}
+===== ===== =====
+{
+    "signature": {
+        "signer": {
+            "id": "b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V"
+        },
+        "signature": {
+            "sr25519": "0x0ef18859164f86bd7139c8fa2d3e9ffdf658f2ddf8c5998539c9d008c9788b661486a49866433920196db2274c8250282238aa2ecf2a4c6a252426a09a835f8f"
+        },
+        "era": {
+            "mortalEra": "0xc401"
+        },
+        "nonce": 23,
+        "tip": 0
+    },
+    "method": {
+        "callIndex": "0x1f00",
+        "args": {
+            "dest": {
+                "id": "VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"
+            },
+            "value": "0x000000000000000002c68af0bb140000"
+        }
+    }
+}
+===== ===== =====
+0x4d028400e24fc1367224c25f0eb4a12d5013386aee19b194dc23b9384b8f975ea7b0610e010ef18859164f86bd7139c8fa2d3e9ffdf658f2ddf8c5998539c9d008c9788b661486a49866433920196db2274c8250282238aa2ecf2a4c6a252426a09a835f8fc4015c001f000000c499d3bbe996dfbb5549064d1890def4a9775a675b43b9203eefd810b21f6513000014bbf08ac602
+===== ===== =====
+{
+    "callIndex": "0x1f00",
+    "args": {
+        "dest": {
+            "id": "VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"
+        },
+        "value": "0x000000000000000002c68af0bb140000"
+    }
+}
+===== ===== =====
+0x1f000000c499d3bbe996dfbb5549064d1890def4a9775a675b43b9203eefd810b21f6513000014bbf08ac602
+===== STEP2-SignRawTx-End =====
+===== STEP3-SendSignedTx-Start =====

@@ -1,0 +1,49 @@
+curl --location --request POST 
+  'https: //rpc.polkadot.io' 
+  --header 'Content-Type: application/json' 
+  --data-raw 
+  '{
+  "jsonrpc": "2.0",
+  "id": 18,
+  "method": "state_getStorage",
+  "params": [
+    "0xede8e4fdc3c8b556f0ce2f77fc2575e3b3d1c643c0d45e2bb9269ac86c1dcda0b4def25cfda6ef3a00000000",
+    "0x5e55c8c7b5f523cd710e29516f2f0c559c24b7c0ae819926f451e9428f01c4d3"
+  ]
+}'
+
+
+
+
+
+  curl --location --request POST 'https: //westend-rpc.polkadot.io' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "state_getKeys",
+  "params": [
+    "0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da9"
+  ]
+}'
+
+
+
+
+  curl --location --request POST 'https: //rpc.polkadot.io' --header 'Content-Type: application/json' --data-raw '{"jsonrpc":"2.0","id":18,"method":"state_getStorage","params":["0xede8e4fdc3c8b556f0ce2f77fc2575e3b3d1c643c0d45e2bb9269ac86c1dcda0b4def25cfda6ef3a00000000","0x5e55c8c7b5f523cd710e29516f2f0c559c24b7c0ae819926f451e9428f01c4d3"]}'
+
+  --rpc-max-request-size <size in MB> \
+  --rpc-max-response-size <size in MB> \
+
+
+
+  
+
+
+curl --location --request POST 'https://shibuya.public.blastapi.io' --header 'Content-Type: application/json' --data-raw '{ "jsonrpc": "2.0", "id": 18, "method": "chain_getBlockHash", "params": ["3636456",] }'
+
+
+3636456
+
+
+3654722
