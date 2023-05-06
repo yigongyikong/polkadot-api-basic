@@ -14,17 +14,20 @@ const connectRpcInfo = async () => {
     // await api.isReady;
 
     // const provider = new HttpProvider('https://!!');
-    // const provider = new HttpProvider('https://astar.public.blastapi.io');
-    // const api = await ApiPromise.create({provider});
+    const provider = new HttpProvider('https://astar.public.blastapi.io');
+    const api = await ApiPromise.create({provider});
 
     // console.log('latest block Hash', version);
 
     // Use the api
     // For example:
-    // console.log((await api.rpc.system.properties()).toHuman());
+    console.log((await api.rpc.system.properties()).toHuman());
     // { ss58Format: '5', tokenDecimals: [ '18' ], tokenSymbol: [ 'ASTR' ] }
     // https://hazel-gondolin-982d6.astar.bdnodes.net?auth=KpsskkIce4d-ogsKq42cUirhP29tqwW3bOH4sfpPuJ8
     // return api;
+
+    const lastHeader = await api.rpc.chain.getHeader();
+    console.log(lastHeader.toHuman().number);
 }
 
 connectRpcInfo().catch(console.error).finally(() => process.exit());
