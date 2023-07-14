@@ -1,0 +1,98 @@
+// Submittable { initialU8aLength: undefined, registry: TypeRegistry {} }
+// const trsfRawTx = api.tx.balances.transfer(testAcnt1, BigInt(200000000000000000));
+{
+    "signature": {
+        "signer": {
+            "id": "VwJHxi1vTNdnJ2KXfQ7tWL8ERiUGv9bwhmf5RDWKGySQmsy"
+        },
+        "signature": {
+            "ed25519": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "era": {
+            "immortalEra": "0x00"
+        },
+        "nonce": 0,
+        "tip": 0
+    },
+    "method": {
+        "callIndex": "0x1f00",
+        "args": {
+            "dest": {
+                "id": "VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"
+            },
+            "value": "0x000000000000000002c68af0bb140000"
+        }
+    }
+}
+// const signedTx = await trsfRawTx.signAsync(testAcnt2Key);
+{
+    "signature": {
+        "signer": {
+            "id": "b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V"
+        },
+        "signature": {
+            "sr25519": "0x100a99d6d9f5674819378b23be83a7734c6c352be91c690fd6c25022e6c8bf553633d18bebf8cd6e6d3757d813c035646224cac005897b8d2d7b7e32584f1e89"
+        },
+        "era": {
+            "mortalEra": "0xf400"
+        },
+        "nonce": 9,
+        "tip": 0
+    },
+    "method": {
+        "callIndex": "0x1f00",
+        "args": {
+            "dest": {
+                "id": "VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U"
+            },
+            "value": "0x000000000000000002c68af0bb140000"
+        }
+    }
+}
+/*
+{
+  signature: {
+    signer: { id: 'b42omy85WkT84v8xUq2MLmrUj5hVUtJiQFviE4Bda9mjH2V'
+        },
+    signature: {
+      sr25519: '0x100a99d6d9f5674819378b23be83a7734c6c352be91c690fd6c25022e6c8bf553633d18bebf8cd6e6d3757d813c035646224cac005897b8d2d7b7e32584f1e89'
+        },
+    era: { mortalEra: '0xf400'
+        },
+    nonce: 9,
+    tip: 0
+    },
+  method: {
+    callIndex: '0x1f00',
+    args: { dest: [Object
+            ], value: '0x000000000000000002c68af0bb140000'
+        }
+    }
+}
+*/
+/*
+{
+    signature: {
+      value: {
+        signer: [Object],
+        signature: [Object],
+        era: [Object],
+        nonce: 0,
+        tip: 0
+      },
+      writable: true,
+      enumerable: true,
+      configurable: true
+    },
+    method: {
+      value: { callIndex: '0x1f00', args: [Object] },
+      writable: true,
+      enumerable: true,
+      configurable: true
+    }
+  }
+
+
+  Submittable { initialU8aLength: undefined, registry: TypeRegistry {} }
+  */
+

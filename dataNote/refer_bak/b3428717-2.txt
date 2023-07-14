@@ -1,0 +1,77 @@
+[
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  }
+]

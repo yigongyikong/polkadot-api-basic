@@ -1,0 +1,80 @@
+Type(2) [Map
+] {
+  'block' => Type(2) [Map
+  ] {
+    'header' => Type(5) [Map
+    ] {
+      'parentHash' => [Type [Uint8Array
+        ]
+      ],
+      'number' => [Type
+      ],
+      'stateRoot' => [Type [Uint8Array
+        ]
+      ],
+      'extrinsicsRoot' => [Type [Uint8Array
+        ]
+      ],
+      'digest' => [Type [Map
+        ]
+      ],
+      initialU8aLength: 0,
+      registry: TypeRegistry {}
+    },
+    'extrinsics' => Type(4) [
+      [Type
+      ],
+      [Type
+      ],
+      [Type
+      ],
+      [Type
+      ],
+      registry: TypeRegistry {},
+      initialU8aLength: 0
+    ],
+    initialU8aLength: 0,
+    registry: TypeRegistry {}
+  },
+  'justifications' => Type { registry: TypeRegistry {}
+  },
+  initialU8aLength: 0,
+  registry: TypeRegistry {},
+  createdAtHash: Type(32) [Uint8Array
+  ] [
+    150,
+    110,
+    205,
+    27,
+    33,
+    194,
+    12,
+    146,
+    86,
+    59,
+    197,
+    6,
+    0,
+    182,
+    109,
+    73,
+    234,
+    43,
+    52,
+    194,
+    124,
+    67,
+    185,
+    70,
+    237,
+    12,
+    106,
+    248,
+    96,
+    183,
+    97,
+    127,
+    registry: TypeRegistry {},
+    initialU8aLength: 32
+  ]
+}

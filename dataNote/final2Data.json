@@ -1,0 +1,22 @@
+curl -X 'GET' \
+  'http://localhost:11002/api/chain/astarsubstrate/blocks/3654721' \
+  -H 'accept: */*'
+
+==
+
+[crypto-grid] Debug     4/25/2023, 8:07:24 AM #Request[719a1c5b] GET /api/chain/astarsubstrate/blocks/3654721/ {} {} - {} +30s
+0x46bd35a04f64534d1a9d5ed14ff16ff3f963d0644c54ec9ada1e3f576d5bb390
+{
+  block: {
+    header: {
+      parentHash: '0x1dcb506263d133826deac85aa5985f791256cde3b758f0b1871f160e123505f2',
+      number: '3,654,721',
+      stateRoot: '0x77b1421cb281d3eaa73a92333c320ef688978ecffc9a2ee38ec0f65a0ec377ce',
+      extrinsicsRoot: '0xcfd3fcc487a1a236c80a18bbc73524dba2f91e6ad33da2be47a76f80efe4c00a',
+      digest: [Object]
+    },
+    extrinsics: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
+  },
+  justifications: null
+}
+[crypto-grid] Debug     4/25/2023, 8:07:27 AM Response[719a1c5b] 304 Not Modified undefined undefined - {} +3

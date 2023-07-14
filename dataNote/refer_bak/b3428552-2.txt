@@ -1,0 +1,300 @@
+[
+  {
+    name: "calls",
+    type: "Vec<shibuya_runtime:RuntimeCall>",
+    type_name: "Vec<<T as Config>::RuntimeCall>",
+    value: [
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      },
+      {
+        call_index: "2207",
+        call_module: "DappsStaking",
+        call_name: "claim_staker",
+        params: [
+          {
+            name: "contract_id",
+            type: "shibuya_runtime:SmartContract",
+            value: {
+              Evm: "0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
+
+
+=====
+
+[
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  },
+  {
+    args: { contract_id: { Evm: '0x1cee94a11eaf390b67aa346e9dda3019dfad4f6a' } },
+    method: 'claimStaker',
+    section: 'dappsStaking'
+  }
+]
