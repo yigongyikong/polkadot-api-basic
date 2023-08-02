@@ -54,7 +54,7 @@ const offlineSignWssTransfer = async () => {
     });
 
     const accountBalInfo = await api.derive.balances.account(testAcnt2);
-    const nonceTestAcnt2 = accountBalInfo.accountNonce.toString();
+    let nonceTestAcnt2 = accountBalInfo.accountNonce.toString();
     console.log('===== ===== =====');
 
     const blockNumber_tmp = registry_api.createType('BlockNumber', block_api.block.header.number.toHex()).toString();
@@ -67,7 +67,9 @@ const offlineSignWssTransfer = async () => {
     // const stakeCall = await api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(5000000000000000000));
     // const stakeCall = await api.tx.dappsStaking.unbondAndUnstake(getDappAddressEnum(contractAddress), BigInt(3000000000000000000));
 
-    const unsigned_api = {
+    console.log(`\n1st nonceTestAcnt2: ${nonceTestAcnt2}`);
+    // 1st
+    let unsigned_api = {
         // specVersion: runtime_api.specVersion.toNumber(),
         specVersion: runtime_api.specVersion.toString(),
         // transactionVersion: runtime_api.transactionVersion.toNumber(),
@@ -99,22 +101,22 @@ const offlineSignWssTransfer = async () => {
     console.log('\n===== ===== =====\n');
 
     // Construct the signing payload from an unsigned transaction.
-    const signingPayload_api = construct.signingPayload(unsigned_api, { registry: registry_api });
+    let signingPayload_api = construct.signingPayload(unsigned_api, { registry: registry_api });
     console.log(`\nPayload to Sign: ${signingPayload_api}`);
 
     // Sign a payload. This operation should be performed on an offline device.
     // const signature = signWith(alice, signingPayload, {
-    const signature_api = signWith(testAcnt2Key, signingPayload_api, {
+    let signature_api = signWith(testAcnt2Key, signingPayload_api, {
         metadataRpc: metadataRpc_api.toHex(),
         registry: registry_api,
     });
     // const signature_api = '0x01123454e1ae90039aad9375f51ec3d4c08aaf12fea73a018e4f773841b111bf62e81a3b388766ef6a5a2f791b556cb19bfc36f09a68320157a672ed0c36dc868d';
     console.log(`\nSignature: ${signature_api}`);
 
-    
+
 
     // Encode a signed transaction.
-    const tx_api = construct.signedTx(unsigned_api, signature_api, {
+    let tx_api = construct.signedTx(unsigned_api, signature_api, {
         metadataRpc: metadataRpc_api.toHex(),
         registry: registry_api,
     });
@@ -124,9 +126,140 @@ const offlineSignWssTransfer = async () => {
     // operation should be handled externally. Here, we just send a JSONRPC
     // request directly to the node.
     // const actualTxHash = await rpcToLocalNode('author_submitExtrinsic', [tx]);
-    const actualTxHash_api = await api.rpc.author.submitExtrinsic(tx_api);
+    let actualTxHash_api = await api.rpc.author.submitExtrinsic(tx_api);
     console.log(`\nActual Tx Hash: ${actualTxHash_api}`);
+    // sleep(20000);
 
+
+    let tmpNum:number = nonceTestAcnt2;
+    // nonceTestAcnt2 = accountBalInfo.accountNonce.toString();
+    console.log(`\n2nd nonceTestAcnt2: ${nonceTestAcnt2}`);
+    // 2nd
+    unsigned_api = {
+        // specVersion: runtime_api.specVersion.toNumber(),
+        specVersion: runtime_api.specVersion.toString(),
+        // transactionVersion: runtime_api.transactionVersion.toNumber(),
+        transactionVersion: runtime_api.transactionVersion.toString(),
+        address: testAcnt2,
+        blockHash: blockHash_api.toHex(),
+        blockNumber: blockNumber_tmp,
+        era: era_tmp.toHex(),
+        // era: 64,
+        genesisHash: genesisHash_api.toHex(),
+        method: api.tx.balances.transfer(testAcnt1, BigInt(1000000000000000000)).method.toHex(),
+        // method: api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(7000000000000000000)).method.toHex(),
+        nonce: nonceTestAcnt2,
+        signedExtensions: [
+            'CheckNonZeroSender',
+            'CheckSpecVersion',
+            'CheckTxVersion',
+            'CheckGenesis',
+            'CheckMortality',
+            'CheckNonce',
+            'CheckWeight',
+            'ChargeTransactionPayment',
+        ],
+        tip: '0x00000000000000000000000000000000',
+        version: 4,
+        metadataRpc: metadataRpc_api.toHex()
+    }
+    // console.log(unsigned_api);
+    console.log('\n===== ===== =====\n');
+
+    // Construct the signing payload from an unsigned transaction.
+    signingPayload_api = construct.signingPayload(unsigned_api, { registry: registry_api });
+    console.log(`\nPayload to Sign: ${signingPayload_api}`);
+
+    // Sign a payload. This operation should be performed on an offline device.
+    // const signature = signWith(alice, signingPayload, {
+    signature_api = signWith(testAcnt2Key, signingPayload_api, {
+        metadataRpc: metadataRpc_api.toHex(),
+        registry: registry_api,
+    });
+    // const signature_api = '0x01123454e1ae90039aad9375f51ec3d4c08aaf12fea73a018e4f773841b111bf62e81a3b388766ef6a5a2f791b556cb19bfc36f09a68320157a672ed0c36dc868d';
+    console.log(`\nSignature: ${signature_api}`);
+
+
+
+    // Encode a signed transaction.
+    tx_api = construct.signedTx(unsigned_api, signature_api, {
+        metadataRpc: metadataRpc_api.toHex(),
+        registry: registry_api,
+    });
+    console.log(`\nTransaction to Submit: ${tx_api}`);
+
+    // Send the tx to the node. Since `txwrapper` is offline-only, this
+    // operation should be handled externally. Here, we just send a JSONRPC
+    // request directly to the node.
+    // const actualTxHash = await rpcToLocalNode('author_submitExtrinsic', [tx]);
+    actualTxHash_api = await api.rpc.author.submitExtrinsic(tx_api);
+    console.log(`\nActual Tx Hash: ${actualTxHash_api}`);
+    sleep(20000);
+
+
+    nonceTestAcnt2 += 1;
+    // nonceTestAcnt2 = accountBalInfo.accountNonce.toString();
+    console.log(`\n3rd nonceTestAcnt2: ${nonceTestAcnt2}`);
+    // 3rd
+    unsigned_api = {
+        // specVersion: runtime_api.specVersion.toNumber(),
+        specVersion: runtime_api.specVersion.toString(),
+        // transactionVersion: runtime_api.transactionVersion.toNumber(),
+        transactionVersion: runtime_api.transactionVersion.toString(),
+        address: testAcnt2,
+        blockHash: blockHash_api.toHex(),
+        blockNumber: blockNumber_tmp,
+        era: era_tmp.toHex(),
+        // era: 64,
+        genesisHash: genesisHash_api.toHex(),
+        method: api.tx.balances.transfer(testAcnt1, BigInt(1000000000000000000)).method.toHex(),
+        // method: api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(7000000000000000000)).method.toHex(),
+        nonce: nonceTestAcnt2,
+        signedExtensions: [
+            'CheckNonZeroSender',
+            'CheckSpecVersion',
+            'CheckTxVersion',
+            'CheckGenesis',
+            'CheckMortality',
+            'CheckNonce',
+            'CheckWeight',
+            'ChargeTransactionPayment',
+        ],
+        tip: '0x00000000000000000000000000000000',
+        version: 4,
+        metadataRpc: metadataRpc_api.toHex()
+    }
+    // console.log(unsigned_api);
+    console.log('\n===== ===== =====\n');
+
+    // Construct the signing payload from an unsigned transaction.
+    signingPayload_api = construct.signingPayload(unsigned_api, { registry: registry_api });
+    console.log(`\nPayload to Sign: ${signingPayload_api}`);
+
+    // Sign a payload. This operation should be performed on an offline device.
+    // const signature = signWith(alice, signingPayload, {
+    signature_api = signWith(testAcnt2Key, signingPayload_api, {
+        metadataRpc: metadataRpc_api.toHex(),
+        registry: registry_api,
+    });
+    // const signature_api = '0x01123454e1ae90039aad9375f51ec3d4c08aaf12fea73a018e4f773841b111bf62e81a3b388766ef6a5a2f791b556cb19bfc36f09a68320157a672ed0c36dc868d';
+    console.log(`\nSignature: ${signature_api}`);
+
+
+
+    // Encode a signed transaction.
+    tx_api = construct.signedTx(unsigned_api, signature_api, {
+        metadataRpc: metadataRpc_api.toHex(),
+        registry: registry_api,
+    });
+    console.log(`\nTransaction to Submit: ${tx_api}`);
+
+    // Send the tx to the node. Since `txwrapper` is offline-only, this
+    // operation should be handled externally. Here, we just send a JSONRPC
+    // request directly to the node.
+    // const actualTxHash = await rpcToLocalNode('author_submitExtrinsic', [tx]);
+    actualTxHash_api = await api.rpc.author.submitExtrinsic(tx_api);
+    console.log(`\nActual Tx Hash: ${actualTxHash_api}`);
 }
 
 offlineSignWssTransfer().catch(console.error).finally(() => process.exit());
@@ -155,4 +288,10 @@ export function signWith(
         .sign(pair);
 
     return signature as unknown as `0x${string}`;
+}
+
+
+function sleep(ms) {
+    const wakeUpTime = Date.now() + ms;
+    while (Date.now() < wakeUpTime) { }
 }

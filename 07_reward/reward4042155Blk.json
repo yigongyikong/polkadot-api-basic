@@ -1,0 +1,34 @@
+// curl -X POST 'https://astar.api.subscan.io/api/scan/account/reward_slash' \
+//   --header 'Content-Type: application/json' \
+//   --header 'X-API-Key: 15fbe4fd75314c32bb23fe18a5ec7cd3' \
+//   --data-raw '{
+//     "row": 20,
+//     "address": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+//     "block_range" : "4042155-4042155"
+//   }'
+{
+    "code": 0,
+    "message": "Success",
+    "generated_at": 1690955019,
+    "data": {
+        "count": 1,
+        "list": [
+            {
+                "block_num": 4042155,
+                "extrinsic_idx": 7,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":448},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1688185550270844315\"}]",
+                "extrinsic_hash": "0x28f835b070a46729e8892536deaa001f037e2296063c669319b54cff87b78b20",
+                "event_idx": 40,
+                "amount": "1688185550270844315",
+                "block_timestamp": 1689865230,
+                "event_index": "4042155-40",
+                "extrinsic_index": "4042155-7"
+            }
+        ]
+    }
+}

@@ -1,0 +1,130 @@
+// curl -X POST 'https://astar.api.subscan.io/api/scan/account/reward_slash' \
+//   --header 'Content-Type: application/json' \
+//   --header 'X-API-Key: 15fbe4fd75314c32bb23fe18a5ec7cd3' \
+//   --data-raw '{
+//     "row": 20,
+//     "address": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+//     "block_range" : "4092088-4092088"
+//   }'
+{
+    "code": 0,
+    "message": "Success",
+    "generated_at": 1690954708,
+    "data": {
+        "count": 7,
+        "list": [
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":455},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1683808499246294733\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 491,
+                "amount": "1683808499246294733",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-491",
+                "extrinsic_index": "4092088-21"
+            },
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":454},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1684323925719169436\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 486,
+                "amount": "1684323925719169436",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-486",
+                "extrinsic_index": "4092088-21"
+            },
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":453},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1685539831760008074\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 481,
+                "amount": "1685539831760008074",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-481",
+                "extrinsic_index": "4092088-21"
+            },
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":452},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1685985995890838335\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 476,
+                "amount": "1685985995890838335",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-476",
+                "extrinsic_index": "4092088-21"
+            },
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":451},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1686365924977666534\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 471,
+                "amount": "1686365924977666534",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-471",
+                "extrinsic_index": "4092088-21"
+            },
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":450},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1685564331869137699\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 466,
+                "amount": "1685564331869137699",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-466",
+                "extrinsic_index": "4092088-21"
+            },
+            {
+                "block_num": 4092088,
+                "extrinsic_idx": 21,
+                "stash": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "account": "bKfESSUUBtgpzhWiUmNZ1euo232wJ45B2n3nUoYuDgnLkd1",
+                "module_id": "dappsstaking",
+                "event_id": "Reward",
+                "event_method": "Reward",
+                "params": "[{\"type\":\"[U8; 32]\",\"type_name\":\"AccountId\",\"value\":\"0xee3b0dd6890b83708ec6703433261df52715851b3f4b89aaa5ebb181b45cb663\"},{\"type\":\"astar_runtime:SmartContract\",\"type_name\":\"SmartContract\",\"value\":{\"Wasm\":\"0xb970384a74a5da72879de4068cffc834ec743422a666c612ab6fee662fef36b3\"}},{\"type\":\"U32\",\"type_name\":\"EraIndex\",\"value\":449},{\"type\":\"U128\",\"type_name\":\"BalanceOf\",\"value\":\"1688197544973712614\"}]",
+                "extrinsic_hash": "0xde4797c7451d5a74ad6c8206095a380b47e8b242e93161aa7c5be2d365dbee1f",
+                "event_idx": 461,
+                "amount": "1688197544973712614",
+                "block_timestamp": 1690470042,
+                "event_index": "4092088-461",
+                "extrinsic_index": "4092088-21"
+            }
+        ]
+    }
+}
