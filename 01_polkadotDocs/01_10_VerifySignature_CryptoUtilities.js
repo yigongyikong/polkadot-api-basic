@@ -20,8 +20,8 @@ const main = async () => {
   await cryptoWaitReady();
   const isValid = isValidSignature(
     'This is a text message',
-    '0x2aeaa98e26062cf65161c68c5cb7aa31ca050cb5bdd07abc80a475d2a2eebc7b7a9c9546fbdff971b29419ddd9982bf4148c81a49df550154e1674a6b58bac84',
-    '5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty'
+    '0x0024c0da6049dcdd9c206909a8da487b0d37cf0e80d357010795782d6923ac1af82e307a4479564799dbb9b4ef1f8353fb27973a8c43dce60a2725471ab5f2ef0d',
+    'aRKc6KjTcDAsRcg5VkeWo9rkjgerZdBB27D2KgC4jsm9SVB'
   );
   console.log(isValid)
   // true

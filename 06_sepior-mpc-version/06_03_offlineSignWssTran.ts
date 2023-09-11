@@ -17,6 +17,7 @@ import {
 } from '@substrate/txwrapper-polkadot';
 import { EXTRINSIC_VERSION } from '@polkadot/types/extrinsic/v4/Extrinsic';
 import { getDappAddressEnum } from '@astar-network/astar-sdk-core';
+import { Extrinsic } from '@polkadot/types/interfaces';
 
 const offlineSignWssTransfer = async () => {
     // Create a new instance of the api
@@ -26,10 +27,12 @@ const offlineSignWssTransfer = async () => {
     await api.isReady;
 
     // const testAcnt1 = 'VxJhKGJ7wsVwZvaikWQzhexb9VawgFUtBuXNAmDAhBBVi4U'; // dstAddr
-    const testAcnt1 = 'bZDGgVRhyFCcEMXKmWKLqqAUoGA9JMwY8F8fF8vaf4V3DJS'; // dstAddr
+    // const testAcnt1 = 'bZDGgVRhyFCcEMXKmWKLqqAUoGA9JMwY8F8fF8vaf4V3DJS'; // dstAddr
+    const testAcnt1 = 'bCPMk4Nvov95PbrGFq1kRYx81bwkjsZJMjgmECgQefLGd1b'; // dstAddr
 
     // const testAcnt2 = '5HBSNV13JH7LuEtJUBNuKgcaPgNaXGBZhCknUWrKmD9p8vhA'; // sndAddr
-    const testAcnt2 = 'a9vf2HnVwUcNaHMmEDeCQxhAPWVWZNgwCs2S9fTXW3Jm6nT'; // sndAddr
+    // const testAcnt2 = 'a9vf2HnVwUcNaHMmEDeCQxhAPWVWZNgwCs2S9fTXW3Jm6nT'; // sndAddr
+    const testAcnt2 = 'aRKc6KjTcDAsRcg5VkeWo9rkjgerZdBB27D2KgC4jsm9SVB'; // sndAddr-sepior
 
     await cryptoWaitReady();
 
@@ -41,6 +44,8 @@ const offlineSignWssTransfer = async () => {
         deriveAddress(testAcnt2Key.publicKey, 42) // TODO, use correct prefix
     );
     // testAcnt2Key's SS58-Encoded Address: 5HBSNV13JH7LuEtJUBNuKgcaPgNaXGBZhCknUWrKmD9p8vhA
+
+    const testAcnt2KeyId = 'NBp1g5uTv55Zmtz7alQqJwbwKI0K';
 
     const block_api = await api.rpc.chain.getBlock();
     const blockHash_api = await api.rpc.chain.getBlockHash(block_api.block.header.number.toHex());
@@ -59,31 +64,27 @@ const offlineSignWssTransfer = async () => {
     let nonceTestAcnt2 = accountBalInfo.accountNonce.toString();
     console.log('===== ===== =====');
 
+
+    const txs: Extrinsic[] = [];
+    for (let i = 0; i < 8; i++) {
+        txs.push(api.tx.dappsStaking.claimStaker(getDappAddressEnum('0x772d8eecb77545feb8d19f7649f6be942bfd1cf9')));
+    }
+
     const blockNumber_tmp = registry_api.createType('BlockNumber', block_api.block.header.number.toHex()).toString();
     const era_tmp = api.registry.createType('ExtrinsicEra', {
         current: blockNumber_tmp,
         period: 64,
     });
 
-    const contractAddress = '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712';
-    // const stakeCall = await api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(5000000000000000000));
-    // const stakeCall = await api.tx.dappsStaking.unbondAndUnstake(getDappAddressEnum(contractAddress), BigInt(3000000000000000000));
-
-    console.log(`\n1st nonceTestAcnt2: ${nonceTestAcnt2}`);
-    // 1st
     let unsigned_api = {
-        // specVersion: runtime_api.specVersion.toNumber(),
         specVersion: runtime_api.specVersion.toString(),
-        // transactionVersion: runtime_api.transactionVersion.toNumber(),
         transactionVersion: runtime_api.transactionVersion.toString(),
         address: testAcnt2,
         blockHash: blockHash_api.toHex(),
         blockNumber: blockNumber_tmp,
         era: era_tmp.toHex(),
-        // era: 64,
         genesisHash: genesisHash_api.toHex(),
-        method: api.tx.balances.transfer(testAcnt1, BigInt(1000000000000000000)).method.toHex(),
-        // method: api.tx.dappsStaking.bondAndStake(getDappAddressEnum(contractAddress), BigInt(7000000000000000000)).method.toHex(),
+        method: api.tx.utility.batch(txs).method.toHex(),
         nonce: nonceTestAcnt2,
         signedExtensions: [
             'CheckNonZeroSender',
@@ -115,6 +116,14 @@ const offlineSignWssTransfer = async () => {
     // const signature_api = '0x01123454e1ae90039aad9375f51ec3d4c08aaf12fea73a018e4f773841b111bf62e81a3b388766ef6a5a2f791b556cb19bfc36f09a68320157a672ed0c36dc868d';
     console.log(`\nSignature: ${signature_api}`);
 
+
+    const unsigned = registry_api.createType('ExtrinsicPayload', signingPayload_api, { version: signingPayload_api.version })
+
+    // IMPORTANT: { method: true} is essential here!
+    const msgToSign = unsigned.toU8a({ method: true })
+    const tsmSignature = await tsmClient.sign(algorithms.EDDSA, keyID, chainPath, msgToSign);
+    const signatureHex: any = "0x00" + Buffer.from(tsmSignature).toString("hex");
+    console.log(`\nsignatureHex: ${signatureHex}`);
 
 
     // Encode a signed transaction.
