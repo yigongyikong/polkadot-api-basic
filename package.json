@@ -13,6 +13,7 @@
     "cheerio": "^1.0.0-rc.12",
     "ethers": "^6.3.0",
     "fs": "^0.0.1-security",
+    "tweetnacl": "^1.0.3",
     "typescript": "^5.0.4"
   }
 }
